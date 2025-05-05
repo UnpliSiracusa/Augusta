@@ -1,27 +1,31 @@
-/* === BASE === */
 html, body {
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
     background-color: #004F9F;
     color: #EDF7FD;
   }
   
-  h1, h2, h3,
-  .dm-serif-display-regular,
-  .dm-serif-display-regular-italic {
+  /* Font Styles */
+  h1, h2, h3, .dm-serif-display-regular, .dm-serif-display-regular-italic {
     font-family: 'DM Serif Display', serif;
   }
   
-  .dm-serif-display-regular { font-weight: 400; font-style: normal; }
-  .dm-serif-display-regular-italic { font-style: italic; }
+  .dm-serif-display-regular {
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .dm-serif-display-regular-italic {
+    font-style: italic;
+  }
   
   p, .split-text p {
     font-family: 'Montserrat', sans-serif;
   }
   
-  /* === MENU === */
+  /* Menu */
   .menu {
     background-color: #EDF7FD !important;
     width: 100%;
@@ -40,98 +44,100 @@ html, body {
   }
   
   .menu nav ul {
-    display: flex;
-    gap: 60px;
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .menu nav ul li a {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
     color: #1893d1 !important;
     text-decoration: none;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     padding: 15px 20px;
     border-bottom: 2px solid transparent;
     transition: color 0.3s ease;
   }
   
   .menu nav ul li a:hover {
-    color: #EDF7ED !important;
+    color: #81C7EA !important;
   }
   
-  /* === HEADER === */
+  /* Hero Header */
   h1 {
-    font-size: 10em !important;
     font-weight: 700 !important;
-    text-align: center;
+    font-size: 10em !important;
     color: #EDF7FD !important;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     margin-bottom: 200px;
+    text-align: center;
   }
   
-  /* === PARAGRAFO === */
   p.montserrat-text {
     font-size: 18px !important;
-    line-height: 1.5;
-    letter-spacing: 1px;
+    line-height: 1.5em;
     text-align: center;
-    text-shadow: 8px 8px 25px rgba(0, 0, 0, 0.8);
     margin: 40px auto 0;
+    letter-spacing: 1px;
     padding: 0 20px;
     width: 80%;
     max-width: 1000px;
+    text-shadow: 8px 8px 25px rgba(0, 0, 0, 0.8);
   }
   
-  /* === BACKGROUND LINK === */
+  /* Background Link */
   #background-link {
     display: block;
     text-decoration: none;
     height: 100vh;
   }
   
-  /* === BACKGROUND CONTAINER === */
+  /* Background Container */
   #background-container {
-    position: relative;
     width: 100%;
     min-height: 100vh;
     background: url('introduzione.jpg') center / cover fixed;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 80px 20px;
     text-align: center;
+    position: relative;
     box-sizing: border-box;
   }
   
   #background-container::after {
     content: '';
     position: absolute;
-    inset: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0, 0, 0, 0.4);
     z-index: -1;
   }
   
-  #background-container h1,
-  #background-container p {
-    color: #EDF7FD;
+  #background-container h1 {
+    font-size: 3em;
     margin: 0;
+    color: #EDF7FD;
   }
   
-  #background-container h1 { font-size: 3em; padding-top: 30px; }
-  #background-container p { font-size: 1.5em; }
+  #background-container p {
+    font-size: 1.5em;
+    color: #EDF7FD;
+  }
   
-  /* === BANNER === */
+  /* Banner Terra */
   .banner-terra {
     position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     background: url('spiagge-augusta-1.jpg') center / cover no-repeat;
   }
   
@@ -147,8 +153,8 @@ html, body {
   .terra.title {
     font-size: 45em;
     color: #004F9F;
-    font-family: 'DM Serif Display', serif;
     margin: 0;
+    font-family: 'DM Serif Display', serif;
   }
   
   .banner-description {
@@ -163,136 +169,231 @@ html, body {
     text-align: center;
   }
   
-  /* === RESPONSIVE === */
-  @media screen and (max-width: 1024px) {
-    .menu nav ul { gap: 30px; flex-wrap: wrap; }
-    h1 { font-size: 6em !important; }
-    .terra.title { font-size: 10em; }
-    .banner-content { left: 50%; top: 50px; transform: translateX(-50%); }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .menu nav { flex-direction: column; padding: 0 15px; }
-    .menu nav ul { flex-direction: column; gap: 20px; }
-    .menu nav ul li a { font-size: 18px; padding: 10px 15px; }
-    h1 { font-size: 4em !important; }
-    p.montserrat-text { font-size: 16px !important; width: 95%; }
-    .terra.title { font-size: 5em; }
-    .banner-description { font-size: 1.3em; padding: 0 20px; }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .menu nav ul li a { font-size: 16px; padding: 8px 12px; }
-    h1 { font-size: 2.5em !important; }
-    p.montserrat-text { font-size: 14px !important; width: 100%; }
-    .terra.title { font-size: 3em; }
-    .banner-description { font-size: 1.1em; padding: 0 10px; }
-  }
-
-/* --- Hero Castello Svevo Fullscreen --- */
-#castello-svevo-fullscreen.hero-castello {
+  /* Castello Svevo Hero */
+  #castello-svevo-fullscreen.hero-castello {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: url('Castello-Svevo.jpg') center/cover no-repeat;
+    background: url('Castello-Svevo.jpg') center / cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 40px;
-    box-sizing: border-box;
     color: #EDF7FD;
-}
-
-/* Testo descrittivo */
-.hero-castello .hero-text-top {
+    box-sizing: border-box;
+  }
+  
+  .hero-text-top {
     position: absolute;
     top: 180px;
     left: 1100px;
     max-width: 700px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
     line-height: 1.6;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
-    color: #EDF7FD;
-}
-
-/* Titolo in basso a sinistra */
-.hero-castello .hero-title-bottom-left {
+  }
+  
+  .hero-title-bottom-left {
     position: absolute;
     bottom: 30px;
     left: 100px;
     text-align: left;
-    line-height: 1;
     letter-spacing: -2px;
-}
-
-.hero-castello .hero-title-bottom-left h2 {
-    font-family: 'DM Serif Display', serif;
+  }
+  
+  .hero-title-bottom-left h2 {
     font-size: 140px;
     margin: 0;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
-}
-
-.hero-castello .hero-title-bottom-left span {
+  }
+  
+  .hero-title-bottom-left span {
     display: block;
     width: 100%;
     text-align: left;
-}
-
-/* Split Text & Image Layout */
-.split-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px;
-    box-sizing: border-box;
-}
-
-.split-text {
-    flex: 1;
-    padding-right: 40px;
-    font-family: 'Montserrat', sans-serif;
-    color: #EDF7FD;
-}
-
-.split-text h2 {
-    font-family: "DM Serif Display", serif;
+  }
+  
+  /* Split Sections */
+  .split-text h2 {
     font-size: 54px;
+    color: #EDF7FD;
     margin-bottom: 10px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.split-text p {
+    text-align: left;
+    line-height: 1.1;
+  }
+  
+  .split-text p {
     font-size: 18px;
-    line-height: 1.7;
+    color: #EDF7ED;
+    line-height: 1.7em;
     text-align: justify;
-    margin: 0;
-}
-
-.split-image {
+    padding: 0 20px;
+  }
+  
+  .split-text,
+  .split-image {
+    padding: 30px;
+  }
+  
+  .split-image {
     flex: 1;
+    width: 50%;
     text-align: center;
-    padding: 20px;
-}
-
-.split-img {
+  }
+  
+  .split-img {
     width: 100%;
     height: auto;
     border-radius: 8px;
+    padding: 20px;
     object-fit: cover;
-}
-
-/* Spacing varianti */
-.split-text.porta-spagnola { margin-left: 100px; }
-.split-text.san-domenico { margin-right: 100px; }
-.split-image.porta-spagnola { margin-right: 150px; }
-.split-image.san-domenico { margin-left: 150px; }
+  }
+  
+  .split-text.porta-spagnola {
+    margin-left: 100px;
+  }
+  
+  .split-text.san-domenico {
+    margin-right: 100px;
+  }
+  
+  .split-image.porta-spagnola {
+    margin-right: 150px;
+  }
+  
+  .split-image.san-domenico {
+    margin-left: 150px;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1024px) {
+    h1 {
+      font-size: 6em !important;
+    }
+  
+    .terra.title {
+      font-size: 10em;
+    }
+  
+    .hero-title-bottom-left h2 {
+      font-size: 80px;
+    }
+  
+    .hero-title-bottom-left .word {
+      width: 280px;
+    }
+  
+    .banner-content {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 50px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .menu nav {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 15px;
+    }
+  
+    .menu nav ul {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+  
+    .menu nav ul li a {
+      font-size: 18px;
+      padding: 10px 15px;
+    }
+  
+    h1 {
+      font-size: 4em !important;
+    }
+  
+    p.montserrat-text {
+      font-size: 16px !important;
+      padding: 0 10px;
+      width: 95%;
+    }
+  
+    .terra.title {
+      font-size: 5em;
+    }
+  
+    .banner-content {
+      top: 40px;
+    }
+  
+    .banner-description {
+      font-size: 1.3em;
+      padding: 0 20px;
+    }
+  
+    .split-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .split-text {
+      padding-bottom: 20px;
+    }
+  
+    .split-image {
+      padding-top: 20px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .hero-title-bottom-left h2 {
+      font-size: 50px;
+    }
+  
+    .hero-title-bottom-left .word {
+      width: 200px;
+    }
+  
+    .hero-title-bottom-left {
+      left: 30px;
+      bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .menu nav ul li a {
+      font-size: 16px;
+      padding: 8px 12px;
+    }
+  
+    h1 {
+      font-size: 2.5em !important;
+    }
+  
+    p.montserrat-text {
+      font-size: 14px !important;
+      padding: 0 10px;
+      width: 100%;
+    }
+  
+    .terra.title {
+      font-size: 3em;
+    }
+  
+    .banner-content {
+      top: 20px;
+    }
+  
+    .banner-description {
+      font-size: 1.1em;
+      padding: 0 10px;
+    }
+  }
 
 /* Chiesa San Domenico Section */
 .section-domenico {
